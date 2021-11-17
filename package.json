@@ -1,0 +1,23 @@
+{
+  "name": "team-generator-profile",
+  "version": "1.0.0",
+  "description": "A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node source/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lianavaleria15/team-generator-profile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lianavaleria15/team-generator-profile/issues"
+  },
+  "homepage": "https://github.com/lianavaleria15/team-generator-profile#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
