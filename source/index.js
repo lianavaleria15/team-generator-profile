@@ -1,1 +1,1 @@
-console.log("team generator");
+
