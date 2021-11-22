@@ -4,7 +4,8 @@
   "description": "A Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person.",
   "main": "index.js",
   "scripts": {
-    "start": "node source/index.js"
+    "start": "node source/index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/lianavaleria15/team-generator-profile#readme",
   "dependencies": {
+    "inquirer": "^8.2.0"
+  },
+  "devDependencies": {
     "@types/jest": "^27.0.3",
-    "inquirer": "^8.2.0",
     "jest": "^27.3.1"
   }
 }
