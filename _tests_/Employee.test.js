@@ -6,6 +6,7 @@ describe("Get employee", () => {
     name: "James",
     id: 123,
     email: "james@here",
+    role: "employee",
   });
   test("Should return name for name input", () => {
     //declare expected
@@ -16,9 +17,21 @@ describe("Get employee", () => {
     expect(actual).toBe(expected);
   });
 
-  test("Should return employee id for id input", () => {});
+  test("Should return employee id for id input", () => {
+    const expected = 123;
+    const actual = mockEmployee.id;
+    expect(actual).toBe(expected);
+  });
 
-  test("Should return email for email input ", () => {});
+  test("Should return email for email input ", () => {
+    const expected = "james@here";
+    const actual = mockEmployee.email;
+    expect(actual).toBe(expected);
+  });
 
-  test("Should return employee for get role function", () => {});
+  test("Should return employee for get role function", () => {
+    const expected = "employee";
+    const actual = mockEmployee.role;
+    expect(actual).toBe(expected);
+  });
 });
