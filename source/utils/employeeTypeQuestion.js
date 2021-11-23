@@ -7,7 +7,7 @@ const teamName = [
 const employeeType = [
   {
     type: "list",
-    name: "employee type",
+    name: "employeeType",
     message: "Which type of employee do you want to add next?",
     choices: [
       //engineer
@@ -19,4 +19,4 @@ const employeeType = [
 ];
 
 //export questions
-module.exports = teamName;
+module.exports = { teamName, employeeType };
