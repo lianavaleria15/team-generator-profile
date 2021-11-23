@@ -19,28 +19,32 @@ describe("Get intern values", () => {
     const actual = mockIntern.name;
     expect(actual).toBe(expected);
   });
+
   //test to verify id input
-  test("Should return Bob for Bob input", () => {
-    const expected = "";
-    const actual = "";
+  test("Should return 78563 for 78563 input", () => {
+    const expected = 78563;
+    const actual = mockIntern.id;
     expect(actual).toBe(expected);
   });
+
   //test to verify email input
-  test("Should return Bob for Bob input", () => {
-    const expected = "";
-    const actual = "";
+  test("Should return bob@email for bob@email input", () => {
+    const expected = "bob@email";
+    const actual = mockIntern.email;
     expect(actual).toBe(expected);
   });
+
   //test to verify role input
-  test("Should return Bob for Bob input", () => {
-    const expected = "";
-    const actual = "";
+  test("Should return intern for intern input", () => {
+    const expected = "intern";
+    const actual = mockIntern.role;
     expect(actual).toBe(expected);
   });
+
   //test to verify school input
-  test("Should return Bob for Bob input", () => {
-    const expected = "";
-    const actual = "";
+  test("Should return Yale for Yale input", () => {
+    const expected = "Yale";
+    const actual = mockIntern.school;
     expect(actual).toBe(expected);
   });
 });
