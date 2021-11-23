@@ -15,31 +15,31 @@ describe("Get manager", () => {
   //verify name input
   test("Should return Chris for Chris", () => {
     const expected = "Chris";
-    const actual = mockManager.name;
+    const actual = mockManager.getName();
     expect(actual).toBe(expected);
   });
   //verify id input
   test("Should return 12365 for 12365", () => {
     const expected = 12365;
-    const actual = mockManager.id;
+    const actual = mockManager.getId();
     expect(actual).toBe(expected);
   });
   //verify email input
   test("Should return chris@email for chris@email", () => {
     const expected = "chris@email";
-    const actual = mockManager.email;
+    const actual = mockManager.getEmail();
     expect(actual).toBe(expected);
   });
   //verify role input
   test("Should return manager for manager", () => {
     const expected = "manager";
-    const actual = mockManager.role;
+    const actual = mockManager.getRole();
     expect(actual).toBe(expected);
   });
   //verify office phone input
   test("Should return 4349543521 for 4349543521", () => {
     const expected = 4349543521;
-    const actual = mockManager.officeNumber;
+    const actual = mockManager.getNumber();
     expect(actual).toBe(expected);
   });
 });
