@@ -12,13 +12,11 @@ const {
 } = require("../source/utils/employeeTypeQuestion");
 
 //import manager questions
-const managerQuestions = require("./utils/managerQuestions");
-
-//import engineer questions
-const engineerQuestions = require("./utils/engineerQuestions");
-
-//import intern questions
-const internQuestions = require("./utils/internQuestions");
+const {
+  managerQuestions,
+  engineerQuestions,
+  internQuestions,
+} = require("./utils/index");
 
 //start application
 const start = async () => {
@@ -29,7 +27,7 @@ const start = async () => {
   //get managers answers
   const managerAnswers = await inquirer.prompt(managerQuestions);
   console.log(managerAnswers);
-  const newManager = new Manager();
+  const newManager = new Manager(managerAnswers);
 
   //while loop to get engineer and intern answers, until selected none
   let inProgress = true;
@@ -43,21 +41,23 @@ const start = async () => {
       const engineerAnswers = await inquirer.prompt(engineerQuestions);
       console.log(engineerAnswers);
       //create new instance of engineer object
-      const newEngineer = new Engineer();
+      const newEngineer = new Engineer(engineerAnswers);
     }
 
     //prompt intern type question
     if (employeeTypeAnswer.employeeType === "intern") {
       const internAnswers = await inquirer.prompt(internQuestions);
       console.log(internAnswers);
-      const newIntern = new Intern();
+      const newIntern = new Intern(internAnswers);
     }
 
     //prompt if another employee should be added
     const addEmployee = await inquirer.prompt(addNewEmployee);
     console.log(addEmployee);
 
-    if (!addNewEmployee.addNewEmployee) {
+    //deconstruct object
+    const { addNewEmployee: newEmployee } = addEmployee;
+    if (!newEmployee) {
       //break out of the while loop
       inProgress = false;
     }
