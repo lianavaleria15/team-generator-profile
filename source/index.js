@@ -22,6 +22,10 @@ const managerQuestions = require("./utils/managerQuestions");
 
 //import engineer questions
 const engineerQuestions = require("./utils/engineerQuestions");
+
+//import intern questions
+const internQuestions = require("./utils/internQuestions");
+
 //start application
 const start = async () => {
   //get team name
@@ -35,10 +39,17 @@ const start = async () => {
   //while loop to get engineer and intern answers, until selected none
   const employeeTypeAnswer = await inquirer.prompt(employeeType);
   console.log(employeeTypeAnswer);
-  //import employee type question
+
+  //prompt engineer type question
   if (employeeTypeAnswer.employeeType === "engineer") {
     const engineerAnswers = await inquirer.prompt(engineerQuestions);
     console.log(engineerAnswers);
+  }
+
+  //prompt intern type question
+  if (employeeTypeAnswer.employeeType === "intern") {
+    const internAnswers = await inquirer.prompt(internQuestions);
+    console.log(internAnswers);
   }
   //build answers object
   //generate HTML code
