@@ -15,8 +15,8 @@ describe("Get intern values", () => {
   //declare tests
   //test to verify name input
   test("Should return Bob for Bob input", () => {
-    const expected = "";
-    const actual = "";
+    const expected = "Bob";
+    const actual = mockIntern.name;
     expect(actual).toBe(expected);
   });
   //test to verify id input
