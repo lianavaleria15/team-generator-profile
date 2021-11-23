@@ -11,7 +11,7 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
 //import manager questions
-const managerQuestions = require("../source/utils/engineerQuestions");
+const managerQuestions = require("./utils/managerQuestions");
 
 //start application
 const start = async () => {
