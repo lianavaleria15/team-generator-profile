@@ -11,20 +11,35 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
 //import team name and employee type questions
-const startQuestions = require("../source/utils/employeeTypeQuestion");
+const {
+  teamName,
+  startQuestions,
+  employeeType,
+} = require("../source/utils/employeeTypeQuestion");
+
 //import manager questions
 const managerQuestions = require("./utils/managerQuestions");
-//import employee type question
 
+//import engineer questions
+const engineerQuestions = require("./utils/engineerQuestions");
 //start application
 const start = async () => {
   //get team name
-  const teamName = await inquirer.prompt(startQuestions);
-  console.log(teamName);
+  const teamNameAnswer = await inquirer.prompt(teamName);
+  console.log(teamNameAnswer);
+
   //get managers answers
   const managerAnswers = await inquirer.prompt(managerQuestions);
   console.log(managerAnswers);
+
   //while loop to get engineer and intern answers, until selected none
+  const employeeTypeAnswer = await inquirer.prompt(employeeType);
+  console.log(employeeTypeAnswer);
+  //import employee type question
+  if (employeeTypeAnswer.employeeType === "engineer") {
+    const engineerAnswers = await inquirer.prompt(engineerQuestions);
+    console.log(engineerAnswers);
+  }
   //build answers object
   //generate HTML code
   //write to HTML file
