@@ -17,3 +17,6 @@ const employeeType = [
     ],
   },
 ];
+
+//export questions
+module.exports = teamName;

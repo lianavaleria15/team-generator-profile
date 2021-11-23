@@ -10,12 +10,17 @@ const Engineer = require("../lib/Engineer");
 
 const Intern = require("../lib/Intern");
 
+//import team name and employee type questions
+const startQuestions = require("../source/utils/employeeTypeQuestion");
 //import manager questions
 const managerQuestions = require("./utils/managerQuestions");
+//import employee type question
 
 //start application
 const start = async () => {
   //get team name
+  const teamName = await inquirer.prompt(startQuestions);
+  console.log(teamName);
   //get managers answers
   const managerAnswers = await inquirer.prompt(managerQuestions);
   console.log(managerAnswers);
