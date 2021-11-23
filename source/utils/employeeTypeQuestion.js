@@ -18,5 +18,13 @@ const employeeType = [
   },
 ];
 
+//ask question to confirm adding a new employee
+const addNewEmployee = [
+  {
+    type: "confirm",
+    name: "addNewEmployee",
+    message: "Do you want to add a new employee?",
+  },
+];
 //export questions
-module.exports = { teamName, employeeType };
+module.exports = { teamName, employeeType, addNewEmployee };
