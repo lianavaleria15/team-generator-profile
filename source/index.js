@@ -11,7 +11,6 @@ const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
 
 //start application
-
 const start = () => {
   //get team name
   //get managers answers
