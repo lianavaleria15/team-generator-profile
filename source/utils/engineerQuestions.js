@@ -8,7 +8,7 @@ const engineerQuestions = [
   //get github username
   {
     type: "input",
-    name: "github username",
+    name: "username",
     message: "Enter engineer's github username:",
   },
 ];
