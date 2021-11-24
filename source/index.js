@@ -20,40 +20,50 @@ const {
 
 //start application
 const start = async () => {
+  //declare array to save all employees added
+  const employeesAdded = [];
+
   //get team name
-  const teamNameAnswer = await inquirer.prompt(teamName);
-  console.log(teamNameAnswer);
+  const team = await inquirer.prompt(teamName);
+  employeesAdded.push(team);
 
   //get managers answers
-  const managerAnswers = await inquirer.prompt(managerQuestions);
-  console.log(managerAnswers);
-  const newManager = new Manager(managerAnswers);
+  const { name, id, email, officeNumber } = await inquirer.prompt(
+    managerQuestions
+  );
+
+  const newManager = new Manager({ name, id, email, officeNumber });
+  employeesAdded.push(newManager);
 
   //while loop to get engineer and intern answers, until selected none
   let inProgress = true;
 
   while (inProgress) {
     const employeeTypeAnswer = await inquirer.prompt(employeeType);
-    console.log(employeeTypeAnswer);
 
     //prompt engineer type question
     if (employeeTypeAnswer.employeeType === "engineer") {
-      const engineerAnswers = await inquirer.prompt(engineerQuestions);
-      console.log(engineerAnswers);
+      const { name, id, email, github } = await inquirer.prompt(
+        engineerQuestions
+      );
+
       //create new instance of engineer object
-      const newEngineer = new Engineer(engineerAnswers);
+      const newEngineer = new Engineer({ name, id, email, github });
+      employeesAdded.push(newEngineer);
     }
 
     //prompt intern type question
     if (employeeTypeAnswer.employeeType === "intern") {
-      const internAnswers = await inquirer.prompt(internQuestions);
-      console.log(internAnswers);
-      const newIntern = new Intern(internAnswers);
+      const { name, id, email, school } = await inquirer.prompt(
+        internQuestions
+      );
+
+      const newIntern = new Intern({ name, id, email, school });
+      employeesAdded.push(newIntern);
     }
 
     //prompt if another employee should be added
     const addEmployee = await inquirer.prompt(addNewEmployee);
-    console.log(addEmployee);
 
     //deconstruct object
     const { addNewEmployee: newEmployee } = addEmployee;
@@ -62,7 +72,7 @@ const start = async () => {
       inProgress = false;
     }
   }
-
+  console.log(employeesAdded);
   //build answers object
   //generate HTML code
   //write to HTML file

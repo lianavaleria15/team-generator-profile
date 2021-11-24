@@ -1,6 +1,6 @@
 //ask team name
 const teamName = [
-  { type: "input", name: "team name", message: "Enter your team's name:" },
+  { type: "input", name: "teamName", message: "Enter your team's name:" },
 ];
 
 //ask which employee is added next
