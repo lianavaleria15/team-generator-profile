@@ -3,8 +3,8 @@ const inquirer = require("inquirer");
 
 //import classes
 const { Engineer, Intern, Manager } = require("../lib");
-//import team name and employee type questions
 
+//import team name and employee type questions
 const {
   teamName,
   addNewEmployee,
@@ -18,6 +18,8 @@ const {
   internQuestions,
 } = require("./utils/index");
 
+//import fs to categorize employees
+const { categorizeEmployees } = require("./utils");
 //start application
 const start = async () => {
   //declare array to save all employees added
@@ -74,8 +76,8 @@ const start = async () => {
   }
   console.log(employeesAdded);
 
-  //import fs to categorize added employees
-  const categorizedEmployees = categorizeEmployees();
+  //call function to categorize employees
+  const categorizedEmployees = categorizeEmployees(employeesAdded);
   console.log(categorizedEmployees);
   //build answers object
   //generate HTML code
