@@ -73,6 +73,10 @@ const start = async () => {
     }
   }
   console.log(employeesAdded);
+
+  //import fs to categorize added employees
+  const categorizedEmployees = categorizeEmployees();
+  console.log(categorizedEmployees);
   //build answers object
   //generate HTML code
   //write to HTML file
