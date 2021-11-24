@@ -24,5 +24,9 @@ const categorizeEmployees = (employeesAdded) => {
   return addedEmployees;
 };
 
+//declare fs to generate html template string
+const generateHtml = (employeesAdded) => {
+  return ``;
+};
 //export transformed user input results
 module.exports = { categorizeEmployees };
