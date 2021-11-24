@@ -19,7 +19,8 @@ const {
 } = require("./utils/index");
 
 //import fs to categorize employees
-const { categorizeEmployees } = require("./utils");
+const { categorizeEmployees } = require("./utils/utils");
+
 //start application
 const start = async () => {
   //declare array to save all employees added
@@ -74,7 +75,7 @@ const start = async () => {
       inProgress = false;
     }
   }
-  console.log(employeesAdded);
+  // console.log(employeesAdded);
 
   //call function to categorize employees
   const categorizedEmployees = categorizeEmployees(employeesAdded);
