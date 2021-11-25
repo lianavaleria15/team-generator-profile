@@ -1,6 +1,13 @@
 //ask team name
 const teamName = [
-  { type: "input", name: "teamName", message: "Enter your team's name:" },
+  {
+    type: "input",
+    name: "teamName",
+    message: "Enter your team's name:",
+    validate: (teamName) => {
+      return teamName ? true : "Please enter a valid name";
+    },
+  },
 ];
 
 //ask which employee is added next

@@ -23,7 +23,7 @@ class Engineer extends Employee {
       <div class="card-body">
         <div class="bg-info title-container">
           <h5 class="card-title text-center text-white">${this.name}</h5>
-          <h6 class="card-subtitle text-center text-white p-2">${this.engineer}</h6>
+          <h6 class="card-subtitle text-center text-white p-2">${this.getRole()}</h6>
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
