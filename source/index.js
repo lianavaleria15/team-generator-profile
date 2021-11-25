@@ -19,7 +19,11 @@ const {
 } = require("./utils/index");
 
 //import fs to categorize employees
-const { categorizeEmployees, generateHtml } = require("./utils/utils");
+const {
+  categorizeEmployees,
+  generateHtml,
+  writeToFile,
+} = require("./utils/utils");
 
 //start application
 const start = async () => {
@@ -84,7 +88,9 @@ const start = async () => {
   //generate HTML code
   const html = generateHtml(categorizeEmployees);
   console.log(html);
+
   //write to HTML file
+  writeToFile("../dist/index.html", html);
 };
 
 //run start

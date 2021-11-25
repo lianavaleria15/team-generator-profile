@@ -1,9 +1,12 @@
+//import fs
+const fs = require("fs");
+
 //transform data from user input to categorize employees (manager, engineer, intern)
 const categorizeEmployees = (employeesAdded) =>
   //reduce employees added array
   employeesAdded.reduce(
     (acc, each) => {
-      //check if employee is an instance of engineer class
+      //check if added employee has a role of (engineer, manager, intern)
       if (each.getRole() === "engineer") acc.engineer = [...acc.engineer, each];
 
       if (each.getRole() === "manager") acc.manager = [...acc.manager, each];
@@ -65,5 +68,14 @@ const generateHtml = ({ engineer, manager, intern }) => {
   </html>
   `;
 };
+
+const writeToFile = (filePath, data) => {
+  try {
+    fs.writeFileSync(filePath, data);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 //export transformed user input results
-module.exports = { categorizeEmployees, generateHtml };
+module.exports = { categorizeEmployees, generateHtml, writeToFile };
