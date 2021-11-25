@@ -22,18 +22,18 @@ const categorizeEmployees = (employeesAdded) =>
 
 //generate employee cards
 const generateCards = (cards, label) => {
-  return `<div>
+  return `
     <h2 class="text-center">${label}</h2>
     <hr />
     <div class="d-flex flex-row justify-content-center">${cards
       .map((card) => card.generateEmployeeCard())
       .join("")}
-    </div
-  </div>`;
+    </div>
+  `;
 };
 
 //declare fs to generate html template string
-const generateHtml = ({ engineer, manager, intern }) => {
+const generateHtml = ({ engineer, manager, intern, teamName }) => {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -57,14 +57,14 @@ const generateHtml = ({ engineer, manager, intern }) => {
       <header>
         <div class="jumbotron jumbotron-fluid bg-info">
           <div class="container">
-            <h1 class="display-6 text-center text-light">Team title generator</h1>
+            <h1 class="display-6 text-center text-light">${teamName}</h1>
           </div>
         </div>
       </header>
       <main>
         ${manager.length ? generateCards(manager, "Manager") : ""}
-        ${engineer.length ? generateCards(engineer, "Manager") : ""}
-        ${intern.length ? generateCards(intern, "Manager") : ""}
+        ${engineer.length ? generateCards(engineer, "Engineers") : ""}
+        ${intern.length ? generateCards(intern, "Interns") : ""}
       </main>
     </body>
   </html>
