@@ -2,7 +2,7 @@
 const inquirer = require("inquirer");
 
 //import classes
-const { Engineer, Intern, Manager } = require("../lib");
+const { Engineer, Intern, Manager } = require("./lib");
 
 //import team name and employee type questions
 const {
@@ -40,6 +40,7 @@ const start = async () => {
   );
 
   const newManager = new Manager({ name, id, email, officeNumber });
+  console.log(newManager.getRole());
   employeesAdded.push(newManager);
 
   //while loop to get engineer and intern answers, until selected none
@@ -56,6 +57,7 @@ const start = async () => {
 
       //create new instance of engineer object
       const newEngineer = new Engineer({ name, id, email, github });
+      console.log(newEngineer.getRole());
       employeesAdded.push(newEngineer);
     }
 
@@ -66,6 +68,7 @@ const start = async () => {
       );
 
       const newIntern = new Intern({ name, id, email, school });
+      console.log(newIntern.getRole());
       employeesAdded.push(newIntern);
     }
 
@@ -80,13 +83,14 @@ const start = async () => {
     }
   }
   // console.log(employeesAdded);
-
+  // console.log(employeesAdded);
   //call function to categorize employees
   const categorizedEmployees = categorizeEmployees(employeesAdded);
-  console.log(categorizedEmployees);
+  // console.log(categorizedEmployees);
 
   //generate HTML code
-  const html = generateHtml(categorizeEmployees);
+  console.log(categorizedEmployees);
+  const html = generateHtml(categorizedEmployees);
   console.log(html);
 
   //write to HTML file
