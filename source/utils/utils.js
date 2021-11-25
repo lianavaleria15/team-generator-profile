@@ -1,9 +1,7 @@
-const { Engineer, Manager, Intern } = require("../../lib");
-
 //transform data from user input to categorize employees (manager, engineer, intern)
-const categorizeEmployees = (employeesAdded) => {
+const categorizeEmployees = (employeesAdded) =>
   //reduce employees added array
-  const addedEmployees = employeesAdded.reduce(
+  employeesAdded.reduce(
     (acc, each) => {
       //check if employee is an instance of engineer class
       if (each.getRole() === "engineer") acc.engineer = [...acc.engineer, each];
@@ -16,7 +14,17 @@ const categorizeEmployees = (employeesAdded) => {
     },
     { engineer: [], manager: [], intern: [] }
   );
-  return addedEmployees;
+
+//generate employee cards
+const generateCards = (cards, label) => {
+  return `<div>
+    <h2 class="text-center">${label}</h2>
+    <hr />
+    <div class="d-flex flex-row justify-content-center">${cards
+      .map((card) => card.generateEmployeeCard())
+      .join("")}
+    </div
+  </div>`;
 };
 
 //declare fs to generate html template string
@@ -49,11 +57,9 @@ const generateHtml = ({ engineer, manager, intern }) => {
         </div>
       </header>
       <main>
-        <div class="d-flex flex-row justify-content-center">
-          ${generateEmployeeCard(manager)}
-          ${generateEmployeeCard(engineer)}
-          ${generateEmployeeCard(intern)}
-        </div>
+        ${manager.length ? generateCards(manager, "Manager") : ""}
+        ${engineer.length ? generateCards(engineer, "Manager") : ""}
+        ${intern.length ? generateCards(intern, "Manager") : ""}
       </main>
     </body>
   </html>
