@@ -6,17 +6,12 @@ const categorizeEmployees = (employeesAdded) => {
   const addedEmployees = employeesAdded.reduce(
     (acc, each) => {
       //check if employee is an instance of engineer class
-      if (each instanceof Engineer) {
-        acc.engineer = [...acc.engineer, each];
-      }
+      if (each.getRole() === "engineer") acc.engineer = [...acc.engineer, each];
 
-      if (each instanceof Manager) {
-        acc.manager = [...acc.manager, each];
-      }
+      if (each.getRole() === "manager") acc.manager = [...acc.manager, each];
 
-      if (each instanceof Intern) {
-        acc.intern = [...acc.intern, each];
-      }
+      if (each.getRole() === "intern") acc.intern = [...acc.intern, each];
+
       return acc;
     },
     { engineer: [], manager: [], intern: [] }
@@ -55,144 +50,9 @@ const generateHtml = ({ engineer, manager, intern }) => {
       </header>
       <main>
         <div class="d-flex flex-row justify-content-center">
-          <div class="card" style="width: 18rem">
-            <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
-            <div class="card-body">
-              <div class="bg-danger title-container">
-                <h5 class="card-title text-center text-white">John</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Manager</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"> </i>
-                  <p>06751</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>john@gmail.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-circle-phone"></i>
-                  <p>07685340321</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <div class="bg-info title-container">
-                <h5 class="card-title text-center text-white">Bob</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Engineer</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"></i>
-                  <p>5405</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>bob@fs.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-brands fa-github"></i>
-                  <a href="#">bob05</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <div class="bg-info title-container">
-                <h5 class="card-title text-center text-white">Bob</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Engineer</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"></i>
-                  <p>5405</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>bob@fs.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-brands fa-github"></i>
-                  <a href="#">bob05</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <div class="bg-info title-container">
-                <h5 class="card-title text-center text-white">Bob</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Engineer</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"></i>
-                  <p>5405</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>bob@fs.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-brands fa-github"></i>
-                  <a href="#">bob05</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <div class="bg-info title-container">
-                <h5 class="card-title text-center text-white">Bob</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Intern</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"></i>
-                  <p>5405</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>bob@fs.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-solid fa-graduation-cap"></i>
-                  <p>University of Birmigham</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-  
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <div class="bg-secondary title-container">
-                <h5 class="card-title text-center text-white">Bob</h5>
-                <h6 class="card-subtitle text-center text-white p-2">Intern</h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <i class="far fa-id-badge"></i>
-                  <p>5405</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="far fa-solid fa-envelope"></i>
-                  <p>bob@fs.com</p>
-                </li>
-                <li class="list-group-item">
-                  <i class="fa fa-solid fa-graduation-cap"></i>
-                  <p>University of Birmigham</p>
-                </li>
-              </ul>
-            </div>
-          </div>
+          ${generateEmployeeCard(manager)}
+          ${generateEmployeeCard(engineer)}
+          ${generateEmployeeCard(intern)}
         </div>
       </main>
     </body>
@@ -200,4 +60,4 @@ const generateHtml = ({ engineer, manager, intern }) => {
   `;
 };
 //export transformed user input results
-module.exports = { categorizeEmployees };
+module.exports = { categorizeEmployees, generateHtml };
