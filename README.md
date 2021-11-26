@@ -82,3 +82,15 @@ If you have any questions related to the application or repository, would like t
 - 📧 [liana.valeria15@gmail.com](mailto:liana.valeria15@gmail.com)
 
 ## Screenshots
+
+### Live app
+
+![Screenshot of live generated html with manager engineer and intern cards](dist/assets/live-app.png)
+
+### Test run results
+
+![Screenshot with all tests passed for employee, engineer, manager and intern classes](dist/assets/tests.jpg)
+
+### Inquirer prompted questions
+
+![Screenshot with all questions prompted on the command line using inquirer](dist/assets/inquirer-questions.jpg))
