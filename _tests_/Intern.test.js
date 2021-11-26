@@ -1,5 +1,5 @@
 //import intern superclass
-const Intern = require("../lib/Intern");
+const Intern = require("../source/lib/Intern");
 
 //describe tests
 describe("Get intern values", () => {

@@ -1,5 +1,5 @@
 //import manager class
-const Manager = require("../lib/Manager");
+const Manager = require("../source/lib/Manager");
 
 //describe test suit
 describe("Get manager", () => {

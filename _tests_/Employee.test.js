@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+const Employee = require("../source/lib/Employee");
 
 describe("Get employee", () => {
   //add mock class data

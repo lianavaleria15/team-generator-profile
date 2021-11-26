@@ -1,5 +1,5 @@
 //import engineer class
-const Engineer = require("../lib/Engineer");
+const Engineer = require("../source/lib/Engineer");
 describe("Get engineer", () => {
   //add mock data
   const mockEngineer = new Engineer({
