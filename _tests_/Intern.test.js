@@ -12,7 +12,11 @@ describe("Get intern values", () => {
     school: "Yale",
   });
 
-  //declare tests
+  //verify mock data is an instance of engineer class
+  test("should be an instance of engineer", () => {
+    expect(mockIntern).toBeInstanceOf(Intern);
+  });
+
   //test to verify name input
   test("Should return Bob for Bob input", () => {
     const expected = "Bob";

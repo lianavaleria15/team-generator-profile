@@ -10,6 +10,11 @@ describe("Get engineer", () => {
     github: "james23",
   });
 
+  //verify mock data is an instance of engineer class
+  test("should be an instance of engineer", () => {
+    expect(mockEngineer).toBeInstanceOf(Engineer);
+  });
+
   //verify name input
   test("Should return James for James input", () => {
     //expected value
@@ -25,6 +30,7 @@ describe("Get engineer", () => {
     const actual = mockEngineer.getId();
     expect(actual).toBe(expected);
   });
+
   //verify email input
   test("Should return james@email for james@email input ", () => {
     //expected value
@@ -32,6 +38,7 @@ describe("Get engineer", () => {
     const actual = mockEngineer.getEmail();
     expect(actual).toBe(expected);
   });
+
   //verify github username input
   test("Should return james23 for james23", () => {
     //expected value
@@ -39,6 +46,7 @@ describe("Get engineer", () => {
     const actual = mockEngineer.getGithub();
     expect(actual).toBe(expected);
   });
+
   //verify role
   test("Should return engineer", () => {
     //expected value

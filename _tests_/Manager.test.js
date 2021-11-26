@@ -11,7 +11,12 @@ describe("Get manager", () => {
     role: "manager",
     officeNumber: 4349543521,
   });
-  //add unit tests
+
+  //verify mock data is an instance of engineer class
+  test("should be an instance of engineer", () => {
+    expect(mockManager).toBeInstanceOf(Manager);
+  });
+
   //verify name input
   test("Should return Chris for Chris", () => {
     const expected = "Chris";
