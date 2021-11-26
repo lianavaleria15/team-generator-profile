@@ -31,7 +31,7 @@ const start = async () => {
   const employeesAdded = [];
 
   //get team name
-  const team = await inquirer.prompt(teamName);
+  const { teamName: team } = await inquirer.prompt(teamName);
   employeesAdded.push(team);
 
   //get managers answers
@@ -82,7 +82,7 @@ const start = async () => {
 
   //call function to categorize employees
   const categorizedEmployees = categorizeEmployees(employeesAdded);
-
+  categorizedEmployees.team = team;
   //generate HTML code
   const html = generateHtml(categorizedEmployees);
 

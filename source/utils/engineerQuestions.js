@@ -37,6 +37,9 @@ const engineerQuestions = [
     type: "input",
     name: "github",
     message: "Enter engineer's github username:",
+    validate: (github) => {
+      return github ? true : "Please enter a valid name";
+    },
   },
 ];
 

@@ -33,7 +33,7 @@ const generateCards = (cards, label) => {
 };
 
 //declare fs to generate html template string
-const generateHtml = ({ engineer, manager, intern, teamName }) => {
+const generateHtml = ({ engineer, manager, intern, team }) => {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -57,7 +57,7 @@ const generateHtml = ({ engineer, manager, intern, teamName }) => {
       <header>
         <div class="jumbotron jumbotron-fluid bg-info">
           <div class="container">
-            <h1 class="display-6 text-center text-light">${teamName}</h1>
+            <h1 class="display-6 text-center text-light">${team}</h1>
           </div>
         </div>
       </header>
