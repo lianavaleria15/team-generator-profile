@@ -34,7 +34,7 @@ class Manager extends Employee {
           </li>
           <li class="list-group-item">
             <i class="far fa-solid fa-envelope"></i>
-            <p>${this.email}</p>
+            <a href="mailto:${this.email}">${this.email}</a>
           </li>
           <li class="list-group-item">
             <i class="fas fa-phone"></i>
