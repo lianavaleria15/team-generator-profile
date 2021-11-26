@@ -87,7 +87,7 @@ const start = async () => {
   const html = generateHtml(categorizedEmployees);
 
   //write to HTML file
-  writeToFile("../dist/index.html", html);
+  writeToFile("./dist/index.html", html);
 };
 
 //run start

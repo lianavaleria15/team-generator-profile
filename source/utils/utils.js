@@ -7,7 +7,6 @@ const categorizeEmployees = (employeesAdded) =>
   //reduce employees added array
   employeesAdded.reduce(
     (acc, each) => {
-      console.log(each);
       //check if added employee has a role of (engineer, manager, intern)
       if (each instanceof Engineer) acc.engineer = [...acc.engineer, each];
 
@@ -73,7 +72,7 @@ const generateHtml = ({ engineer, manager, intern, team }) => {
 
 const writeToFile = (filePath, data) => {
   try {
-    fs.writeFileSync("./dist/index.html", data);
+    fs.writeFileSync(filePath, data);
   } catch (error) {
     console.log(error.message);
   }
