@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.card {
+  margin: 1.5rem;
+  box-shadow: 0 0 1.5rem 0.5rem rgb(177, 175, 175);
+}
+
+.card-body {
+  padding: 0;
+}
+
+.list-group-item {
+  padding: 0, 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.list-group i {
+  margin-top: 0.4rem;
+  padding: 0 1rem;
+}
