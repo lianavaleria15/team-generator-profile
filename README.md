@@ -53,6 +53,8 @@ THEN I exit the application, and the HTML is generated
 
 ## Demo link
 
+Click [here](https://drive.google.com/file/d/1Y-wvkYnxIUYZ6RthXVtDxfJCTjRg5IH-/view) to watch the demo application.
+
 ## Getting started
 
 ### Installation
